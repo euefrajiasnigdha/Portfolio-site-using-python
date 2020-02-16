@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ema</title>
+    {% include 'includes/stylesheets.html' %}
+</head>
+<body>
+
+<div class="loader_bg">
+    <div class="loader"></div>
+</div>
+
+<nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container">
+        {% load static %}
+              <img src="{% static 'image\lg.png' %}" style="width:5%;height:22">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="/"> </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a class="smooth-menu" href="#home">Home</a></li>
+
+
+
+                <li><a class="smooth-menu" href="#about">About</a></li>
+                <li><a class="smooth-menu" href="#services">Services</a></li>
+                <li><a class="smooth-menu" href="#portfolio">Portfolio</a></li>
+                <li><a class="smooth-menu" href="#testimonial">Testimonial</a></li>
+                <li><a class="smooth-menu" href="#contact">Contact</a></li>
+
+                {# Some logic on what to display for last item#}
+                {% if user.is_authenticated %}
+                <li><a class="smooth-menu" href="#status">My Service Status</a></li>
+                <li><a href="{% url 'logout' %}">{{ user.username }},Logout</a></li>
+                {% else %}
+                <li><a class="navbar-link" href="{% url 'core:user_login' %}">Login</a></li>
+                <li><a class="navbar-link" href="{% url 'core:register' %}">Register</a></li>
+                {% endif %}
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <p>&copy;{{ footer.name }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'includes/scripts.html' %}
+</body>
+</html>
+
+<style>
+
+    .navbar-custom .nav li a:hover {
+    outline: 0;
+    color: rgba(255, 255, 255, .8);
+    background-color: #8B008B;
+}
+
+   .navbar-custom .nav li a:focus,
+   .navbar-custom .nav li a:active {
+    outline: 0;
+    background-color: transparent;
+}
+
+
+.navbar-custom a {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0px;
+    font-weight: bold;
+}
+
+@media(min-width:768px) {
+    .navbar-custom {
+        padding: 4px 0;
+        border-bottom: 0;
+        letter-spacing: 1px;
+        background: #5ef4ca6b; /* nav bar custom */
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out;
+    }
+    .navbar-custom.top-nav-collapse {
+        -webkit-box-shadow: 0px 0px 2px #777;
+        box-shadow: 0px 0px 2px #777;
+        background-color: rgb(56, 4, 60);
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    }
+    .navbar-custom.top-nav-collapse .nav li a {
+        color: rgb(56, 4, 60);
+    }
+    .navbar-custom.top-nav-collapse .nav li.active a {
+        background-color: transparent;
+        color: #FF0000 !important;
+    }
+    .navbar-custom.top-nav-collapse .navbar-brand {
+        color: #fff;
+    }
+}
+
+
+
+
+.navbar-custom.top-nav-collapse .nav li a {
+    color: #fff;
+}
+
+.footer-area {
+    background: #48034c;
+    padding: 30px 0;
+}
+
+
+.invitation-area {
+    background: #48034c;
+    color: #48034c;
+}
+
+
+@media only screen and (max-width: 767px){ /*mobile view first */
+.navbar-custom {
+    background: #85318f;
+    border-bottom: none;
+}
+}
+
+
+.navbar-custom.navbar-fixed-top.top-nav-collapse {
+    background: #1fdebb; /* first navbar after colpase */
+    }
+
+</style>

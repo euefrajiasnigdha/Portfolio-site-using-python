@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login to Forword IT!</title>
+    {% include 'includes/stylesheets.html' %}
+</head>
+<body>
+
+<div class="loader_bg">
+    <div class="loader"></div>
+</div>
+
+<nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container">
+        {% load static %}
+              <img src="{% static 'image\logo.PNG' %}" style="width:5%;height:22">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="/"> </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-link" href="{% url 'home' %}">Home</a></li>
+                <li><a class="navbar-link" href="{% url 'core:register' %}">Register</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <p>&copy;Copyright Forword IT</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'includes/scripts.html' %}
+
+
+
+
+
+<div class="container">
+    <div class="jumbotron">
+      <h1 style="font-size:40px;">Login here!</h1><br>
+
+        <form method="post" action="{% url 'core:user_login' %}">
+          {% csrf_token %}
+          {# A more "HTML" way of creating the login form#}
+          <label id="username">Username</label><br>
+          <input type="text" name="username" placeholder="" style="resize: vertical; border: 1px solid #ccc;
+  border-radius: 9px;
+  box-sizing: border-box;"><br>
+            <label id="password">Password</label><br>
+            <input type="password" name="password" placeholder=""  style="color:black; resize: vertical; border: 1px solid #ccc;
+  border-radius: 9px;
+  box-sizing: border-box;"><br><br>
+<input type="submit" name="" value="Login" style="background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;" >
+</form>
+
+</div>
+  </div>
+
+
+</body>
+</html>
+
+
+<style>
+
+
+
+
+.jumbotron {
+  position: absolute;
+    left: 13%;
+    top: 24%;
+    width: 75%;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #875690;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    box-sizing: border-box;
+    background-image: url("https://freedesignfile.com/upload/2017/08/Purple-polar-lights-abstract-background-vector.jpg");
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+
+        color: #f5f5f5;
+    background-color: #fff8d7;
+    background-image: url(https://i.redd.it/umpmoneoipn21.jpg);
+    }
+
+@media(min-width:768px) {
+    .navbar-custom {
+        padding: 4px 0;
+        border-bottom: 0;
+        letter-spacing: 1px;
+        background: rgba(0,0,0,.075);
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out;
+    }
+    .navbar-custom.top-nav-collapse {
+        -webkit-box-shadow: 0px 0px 2px #777;
+        box-shadow: 0px 0px 2px #777;
+        background-color: rgba(0, 0, 0, 1);
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    }
+    .navbar-custom.top-nav-collapse .nav li a {
+        color: #fff;
+    }
+    .navbar-custom.top-nav-collapse .nav li.active a {
+        background-color: transparent;
+        color: #FF0000 !important;
+    }
+    .navbar-custom.top-nav-collapse .navbar-brand {
+        color: #fff;
+    }
+}
+
+
+ .navbar-custom .nav li a:hover {
+    outline: 0;
+    color: rgba(255, 255, 255, .8);
+    background-color: #8B008B;
+}
+
+   .navbar-custom .nav li a:focus,
+   .navbar-custom .nav li a:active {
+    outline: 0;
+    background-color: transparent;
+}
+
+
+.navbar-custom a {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0px;
+    font-weight: bold;
+}
+.navbar-custom.navbar-fixed-top.top-nav-collapse {
+    background: #48034c;
+}
+
+.navbar-custom.top-nav-collapse .nav li a {
+    color: #fff;
+}
+
+.navbar-custom {
+    background: rgba(0,0,0,.075);
+    border-bottom: none;
+}
+
+.footer-area{
+
+    position: absolute;
+    left: 0%;
+    top: 92%;
+    width: 100%;
+    text-align: center;
+
+}
+.footer-area {
+    background: #48034c;
+    padding: 7px 0;
+}
+
+input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: black;
+}
+
+
+</style>

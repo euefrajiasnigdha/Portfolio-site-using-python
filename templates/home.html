@@ -1,0 +1,437 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+   <!-- <div id="home" class="banner-area section-padding">
+        <div class="bg-overlay black"></div>
+        <div class="containter">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="welcome-text">
+                        <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Hello, my name is Touhid</div>
+                        <h1 class="wow fadeInDown" data-wow-delay="0.4s">Create Innovative application with us</h1>
+                        <a href="#about" class="my-btn-1 wow fadeInDown" data-wow-delay="0.6s">Learn more</a>
+                        <a href="#contact" class="my-btn-2 wow fadeInDown" data-wow-delay="0.8s">Get in touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <link href = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+
+
+
+    <div id="home" class="banner-area section-padding">
+      <!-- <div class="bg-overlay black"></div>
+        <div class="containter">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="welcome-text">
+                        <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Hello, my name is Touhid</div>
+                        <h1 class="wow fadeInDown" data-wow-delay="0.4s">Create Innovative application with us</wwwh1>
+                        <a href="#about" class="my-btn-1 wow fadeInDown" data-wow-delay="0.6s">Learn more</a>
+                        <a href="#contact" class="my-btn-2 wow fadeInDown" data-wow-delay="0.8s">Get in touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+        {% load static %}
+      <!--<img src="{% static 'image\6.jpg' %}" alt="Chania" style="width:100%;height:600px">-->
+
+        <a class="view img" href="{{ slideimage.image1.url }}">
+                                <img src="{{ slideimage.image1.url }}" alt="Chania" style="width:100%;height:600px">
+                            </a>
+        <div class="carousel-caption">
+                     <h2 class="animated fadeInLeft">{{slideimage.name1}}</h2>
+                     <p class="animated fadeInUp">{{slideimage.description1}}</p>
+                </div>
+
+
+
+    </div>
+
+
+
+    <div class="item">
+        {% load static %}
+      <!--<img src="{% static 'image\21.jpg' %}" alt="Chania" style="width:100%;height:600px">-->
+        <a class="view img" href="{{ slideimage.image2.url }}">
+                                <img src="{{ slideimage.image2.url }}" alt="Chania" style="width:100%;height:600px">
+                            </a>
+
+      <div class="carousel-caption">
+                     <h2 class="animated fadeInLeft">{{slideimage.name2}}</h2>
+                     <p class="animated fadeInUp">{{slideimage.description2}}</p>
+
+                </div>
+    </div>
+
+      <div class="item">
+        {% load static %}
+      <!--<img src="{% static 'image\21.jpg' %}" alt="Chania" style="width:100%;height:600px">-->
+        <a class="view img" href="{{ slideimage.image3.url }}">
+                                <img src="{{ slideimage.image3.url }}" alt="Chania" style="width:100%;height:600px">
+                            </a>
+
+      <div class="carousel-caption">
+                     <h2 class="animated fadeInLeft">{{slideimage.name3}}</h2>
+                     <p class="animated fadeInUp">{{slideimage.description3}}</p>
+
+                </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</div>
+
+
+
+
+
+
+    {#    About section#}
+
+    <div id="about" class="about-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sn-8 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="about-left">
+                        <h2 class="section-title">{{aboutT.name}}</h2>
+                        <div class="line"></div>
+                        <h4>{{ about.short_description }}</h4>
+                        <p>{{ about.description }}</p>
+                       <!-- <a href="images/about/cv.jpg" download>Download CV&nbsp;<i class="fa fa-download"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-md-5 visible-md visible-lg wow fadeInDown" data-wow-delay="0.6s">
+                    <div class="profile">
+                        <img src="{{ about.image.url }}" alt="Profile image" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#    Services Section#}
+    <div id="services" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2>{{servicesT.name}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                {% for service in services %}
+
+                    <div class="col-md-4 col-sm-4">
+
+                        <div class="single-service wow fadeInDown" >
+                            <a class="c " href="{{ service.image.url }}">
+                                <img src="{{ service.image.url }}" style="width:60px; height:60px;" >
+                                <style>
+                                    .c {
+                                         transition: filter .5s ease-in-out;
+                                         -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+                                            filter: grayscale(0%); /* FF 35+ */
+                                                            }
+                                    .c:hover {
+                                    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+                                    filter: grayscale(100%); /* FF 35+ */
+                                         }
+
+                                </style>
+                            </a>
+                            <h2>{{ service.name }}</h2>
+                            <ul type="square">
+                            {% for s in service.area_as_list %}
+
+                            <li>{{ s }}</li>
+
+                            {% endfor %}
+                            </ul>
+                            <style>
+                                ul li {
+                                       list-style-type: square;
+
+                                       margin-left: 3px
+                                     }
+                            </style>
+                            <p>For Only {{service.Charge}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {#    Recent Works Section#}
+    <div id="portfolio" class="portfolio-area section-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h2>{{portfolioT.name}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for work in works %}
+                    <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
+                        <div class="gallery-items">
+                            <a class="view img" href="{{ work.image.url }}">
+                                <img src="{{ work.image.url }}" alt="work image">
+                            </a>
+
+                            <div class="gallery-text">
+                                <h2>{{ work.title }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+{#    client#}
+    <div id="testimonial" class="portfolio-section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2>{{clientsT.name}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for client in clients %}
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+
+                            {#database theke image ana#}
+                            <a class="view img" href="{{ client.image.url }}">
+                                <img src="{{ client.image.url }}" alt="client image">
+                            </a>
+
+                            <h2>{{ client.name }}</h2>
+                            <p>{{ client.description }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    {#    Contact section#}
+
+
+
+    <div id="contact" class="contact-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2>{{contactT.name}}</h2>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="invitation-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="single-invite text-center">
+                    <h2>{{addressT.name}}</h2>
+                    <p>{{ contact.description }}</p>
+                    <li><a class="navbar-link" href="{% url 'core:register' %}">Register Now</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!--            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 box-contact-form">
+
+                    <form id="contact-form" method="post" action="#">
+
+                        <div class="messages"></div>
+
+                        <div class="controls">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group wow fadeInDown" data-wow-delay="0.2s">
+                                        <input id="form_name" type="text" name="name" class="form-control"
+                                               placeholder="Enter your full name *" required="required"
+                                               data-error="Fullname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group wow fadeInDown" data-wow-delay="0.4s">
+                                        <input id="form_email" type="email" name="email" class="form-control"
+                                               placeholder="Enter your email *" required="required"
+                                               data-error="Valid email is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group wow fadeInUp" data-wow-delay="0.6s">
+                                        <textarea id="form_message" name="message" class="form-control"
+                                                  placeholder="Your Message *" rows="4" required="required"
+                                                  data-error="Leave a message for me"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-send" value="">Send message</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div> -->
+        </div>
+    </div>
+
+
+
+
+
+<div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2> Your Service Status </h2>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+<div class="container">
+  <div class="jumbotron" id="status">
+
+
+
+    <h1 style="font-size: 40px; color: red;">Tracking Result</h1>
+    {% if user.is_authenticated %}
+
+      <h2 style="font-size: 20px; color: white;">Client: {{ user.username }}</h2>
+
+
+
+         <h2 style="font-size: 12px; color: white; text-transform: lowercase;">Email: {{ user.email }}</h2>
+         <h2 style="font-size: 15px; color: white;">Service Ordered: {{ request.user.userprofileinfo.job }}</h2>
+         <h2 style="font-size: 15px; color: white;">Date of Order: {{ request.user.userprofileinfo.o_date }}</h2>
+         <h2 style="font-size: 15px; color: white;">Estimated Completion Date: {{ request.user.userprofileinfo.d_date }}</h2>
+         <h2 style="font-size: 17px; color: #7dff1a; font-weight: bold;">Current Status: {{ request.user.userprofileinfo.status }}</h2>
+
+         <p style="color: white; font-size: 12px;"> For any kind of project related queries, Please Contact us at {{ contact.description }} </p>
+
+
+
+
+      {% else %}
+        <h2 style="font-size: 10px; color: white;" >Register or Login to Track Your Service</h2>
+    {% endif %}
+  </div>
+</div>
+
+
+
+
+
+<style>
+
+.section-header h2 {
+    font-size: 27px;
+    line-height: 37px;
+    margin-bottom: 20px;
+    padding-top: 0px;
+    font-weight: 600;
+    color: #333333;
+    }
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #000000;
+    background-color: #fff;
+}
+
+
+.jumbotron {
+    padding: 30px 15px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #390344;;
+    text-align: center;
+}
+
+
+
+</style>
+{% endblock %}

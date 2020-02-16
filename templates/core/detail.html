@@ -1,0 +1,186 @@
+
+
+
+
+<!doctype html>
+
+
+<div class="jumbotron">
+  <head>
+    <title> {{ blog.title }}</title>
+  </head>
+    <body>
+      <h1> {{ blog.title }}</h1>
+          <p>{{ blog.pub_date }}</p>
+      <hr/>
+      <br/>
+      <center>
+
+          <img src="{{ blog.image.url }}" alt="Chania" style="width:50%;height:350px">
+      </center>
+
+       <br/>
+      <br/>
+ <p>{{ blog.body }}</p>
+
+      <table>
+  <tr>
+    <th>Index</th>
+    <th>Status</th>
+
+  </tr>
+  <tr>
+    <td>First Update</td>
+    <td>{{ blog.update_at }}</td>
+
+  </tr>
+  <tr>
+    <td>Developing Team</td>
+    <td>{{ blog.Developing_at }}</td>
+
+  </tr>
+  <tr>
+    <td>Piloting Team</td>
+    <td>{{ blog.Piloting_at }}</td>
+
+  </tr>
+  <tr>
+    <td>Debug Team</td>
+    <td>{{ blog.Debug_at }}</td>
+
+  </tr>
+  <tr>
+    <td>Ready to Deliver</td>
+    <td>{{ blog.Ready_at }}</td>
+
+  </tr>
+
+</table>
+      </div>
+      <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+.label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: black;
+}
+p {
+    line-height: 26px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #2d2938;
+}
+
+
+
+.jumbotron {
+  position: absolute;
+    left: 13%;
+    top: 13%;
+    width: 75%;
+    text-align: left;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #875690;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    box-sizing: border-box;
+    background-image: url("https://cdn.pixabay.com/photo/2016/04/15/04/02/water-1330252_1280.jpg");
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+
+        color: black;
+    background-color: #fff8d7;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF0-9VGCDmOWMbQlTJ7XJAv7F5PI3pa862A3GsvEhnm7aKoXCn&s.jpg");
+    }
+
+@media(min-width:768px) {
+    .navbar-custom {
+        padding: 4px 0;
+        border-bottom: 0;
+        letter-spacing: 1px;
+        background: rgba(0,0,0,.075);
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out;
+    }
+    .navbar-custom.top-nav-collapse {
+        -webkit-box-shadow: 0px 0px 2px #777;
+        box-shadow: 0px 0px 2px #777;
+        background-color: rgba(0, 0, 0, 1);
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    }
+    .navbar-custom.top-nav-collapse .nav li a {
+        color: #fff;
+    }
+    .navbar-custom.top-nav-collapse .nav li.active a {
+        background-color: transparent;
+        color: #FF0000 !important;
+    }
+    .navbar-custom.top-nav-collapse .navbar-brand {
+        color: #fff;
+    }
+}
+
+
+ .navbar-custom .nav li a:hover {
+    outline: 0;
+    color: rgba(255, 255, 255, .8);
+    background-color: #8B008B;
+}
+
+   .navbar-custom .nav li a:focus,
+   .navbar-custom .nav li a:active {
+    outline: 0;
+    background-color: transparent;
+}
+
+
+.navbar-custom a {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0px;
+    font-weight: bold;
+}
+.navbar-custom.navbar-fixed-top.top-nav-collapse {
+    background: #48034c;
+}
+
+.navbar-custom.top-nav-collapse .nav li a {
+    color: #fff;
+}
+
+.navbar-custom {
+    background: rgba(0,0,0,.075);
+    border-bottom: none;
+}
+
+</style>
+
+      {% now "Y" %}
+  </body>
